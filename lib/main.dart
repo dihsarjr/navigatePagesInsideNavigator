@@ -66,7 +66,12 @@ class Screen1 extends StatelessWidget {
     return Container(
       color: Colors.amber,
       alignment: Alignment.center,
-      child: Text(name),
+      child: RaisedButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Screen5()));
+        },
+      ),
     );
   }
 }
@@ -154,6 +159,32 @@ class Screen4 extends StatelessWidget {
   const Screen4({Key key}) : super(key: key);
 
   static String name = "Screen 4";
+  static IconData icon = Icons.access_alarm;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(name),
+          backgroundColor: Colors.pinkAccent,
+          centerTitle: true,
+          leading: GestureDetector(
+            child: Icon(Icons.arrow_back),
+            onTap: () {},
+          ),
+        ),
+        body: Container(
+          color: Colors.pink,
+          alignment: Alignment.center,
+          child: Text(name),
+        ));
+  }
+}
+
+class Screen5 extends StatelessWidget {
+  const Screen5({Key key}) : super(key: key);
+
+  static String name = "Screen 5";
   static IconData icon = Icons.access_alarm;
 
   @override
